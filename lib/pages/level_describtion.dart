@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:multi_quiz_s_t_tt9/pages/true_false_q_screen.dart';
 
 import '../constants.dart';
 import '../modules/level.dart';
 import '../widgets/my_outline_btn.dart';
-import 'multiple_q_screen.dart';
 
 class LevelDescription extends StatelessWidget {
   final Level level;
@@ -46,8 +44,8 @@ class LevelDescription extends StatelessWidget {
                   ),
                 ],
               ),
-              Expanded(
-                flex: 3,
+              SizedBox(
+                height: 200,
                 child: Center(
                   child: Image.asset(level.image!),
                 ),
@@ -94,7 +92,8 @@ class LevelDescription extends StatelessWidget {
                     ),
                     padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
                   ),
-                  child: Expanded(
+                  child: SizedBox(
+                    height: 50,
                     child: Center(
                       child: Text(
                         'Game',
