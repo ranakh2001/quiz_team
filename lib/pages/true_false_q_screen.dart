@@ -7,14 +7,14 @@ import '../modules/true_false/quizBrain.dart';
 import '../widgets/my_outline_btn.dart';
 import 'home.dart';
 
-class ToFQuiz extends StatefulWidget {
-  const ToFQuiz({super.key});
+class TrueFalseQuiz extends StatefulWidget {
+  const TrueFalseQuiz({super.key});
 
   @override
-  State<ToFQuiz> createState() => _ToFQuizState();
+  State<TrueFalseQuiz> createState() => _TrueFalseQuizState();
 }
 
-class _ToFQuizState extends State<ToFQuiz> {
+class _TrueFalseQuizState extends State<TrueFalseQuiz> {
   QuizBrain quizBrain = QuizBrain();
   bool isAnswered = false;
   Color answerColor = Colors.white;
