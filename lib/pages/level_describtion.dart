@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:multi_quiz_s_t_tt9/pages/true_false_q_screen.dart';
 
 import '../constants.dart';
+import '../modules/level.dart';
 import '../widgets/my_outline_btn.dart';
 import 'multiple_q_screen.dart';
 
 class LevelDescription extends StatelessWidget {
-  const LevelDescription({Key? key}) : super(key: key);
+  final Level level;
 
+  const LevelDescription({Key? key, required this.level}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     var questionNumber = 5;
@@ -17,10 +19,7 @@ class LevelDescription extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              kBlueBg,
-              kL2,
-            ],
+            colors: level.colors,
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -50,11 +49,11 @@ class LevelDescription extends StatelessWidget {
               Expanded(
                 flex: 3,
                 child: Center(
-                  child: Image.asset('assets/images/ballon-b.png'),
+                  child: Image.asset(level.image!),
                 ),
               ),
               Text(
-                'question $questionNumber of $questionsCount',
+                level.subtitle,
                 style: TextStyle(
                   fontSize: 18,
                   fontFamily: 'Sf-Pro-Text',
@@ -65,7 +64,7 @@ class LevelDescription extends StatelessWidget {
                 height: 8,
               ),
               Text(
-                'In Which City of Germany Is the Largest Port?',
+                level.title,
                 style: TextStyle(
                   fontSize: 32,
                   fontFamily: 'Sf-Pro-Text',
@@ -74,7 +73,7 @@ class LevelDescription extends StatelessWidget {
                 ),
               ),
               Text(
-                'question  dhjvajak jklfsakljvabvjkfabjsk \n cdklbvcjksabcddhsaj',
+                level.description!,
                 style: TextStyle(
                   fontSize: 18,
                   fontFamily: 'Sf-Pro-Text',
@@ -86,12 +85,7 @@ class LevelDescription extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 12),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => TrueFalseQuiz(),
-                      ),
-                    );
+                    Navigator.pushNamed(context, level.rootName);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
