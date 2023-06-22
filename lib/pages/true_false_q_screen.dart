@@ -227,9 +227,12 @@ class _ToFQuizState extends State<ToFQuiz> {
                                 ? answerColor
                                 : othersColor
                             : othersColor,
+                            disabledBackgroundColor: useranswer
+                                ? answerColor.withOpacity(0.5)
+                                : othersColor
                       ),
                       onPressed: isAnswered
-                          ? () {}
+                          ? null
                           : () {
                               answer(true);
                             },
@@ -263,9 +266,12 @@ class _ToFQuizState extends State<ToFQuiz> {
                                 ? othersColor
                                 : answerColor
                             : othersColor,
+                            disabledBackgroundColor: useranswer
+                                ? othersColor.withOpacity(0.5)
+                                : answerColor
                       ),
                       onPressed: isAnswered
-                          ? () {}
+                          ? null
                           : () {
                               answer(false);
                             },
