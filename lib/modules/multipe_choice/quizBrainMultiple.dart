@@ -5,7 +5,10 @@ class QuizBrainMulti {
 
   final List<QuestionMultiple> _questionBank = [
     QuestionMultiple('You can lead a cow down stairs but not up stairs.', 1,
-        ['always', 'never', 'sometimes']),
+    
+      //  ['always', 'never', 'sometimes'],
+        
+        ),
     QuestionMultiple(
         'Approximately one quarter of human bones are in the feet.',
         0,
