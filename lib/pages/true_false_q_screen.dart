@@ -101,6 +101,7 @@ class _TrueFalseQuizState extends State<TrueFalseQuiz> {
   }
 
   void answer(bool userAnswer) {
+    timer.cancel();
     setState(() {
       isAnswered = true;
       useranswer = userAnswer;
@@ -127,22 +128,20 @@ class _TrueFalseQuizState extends State<TrueFalseQuiz> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    GestureDetector(
-                        onTap: () {},
-                        child: MYOutlineBtn(
-                          shapeBorder: CircleBorder(),
-                          iconColor: Colors.white,
-                          bColor: Colors.white,
-                          icon: Icons.close,
-                          function: () {
-                            timer.cancel();
-                            Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const HomePage()),
-                                (context) => false);
-                          },
-                        )),
+                    MYOutlineBtn(
+                      shapeBorder: CircleBorder(),
+                      iconColor: Colors.white,
+                      bColor: Colors.white,
+                      icon: Icons.close,
+                      function: () {
+                        timer.cancel();
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomePage()),
+                            (context) => false);
+                      },
+                    ),
                     Stack(alignment: Alignment.center, children: [
                       SizedBox(
                         height: 56,
@@ -218,19 +217,18 @@ class _TrueFalseQuizState extends State<TrueFalseQuiz> {
                   width: double.infinity,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 8),
-                        backgroundColor: isAnswered
-                            ? useranswer
-                                ? answerColor
-                                : othersColor
-                            : othersColor,
-                            disabledBackgroundColor: useranswer
-                                ? answerColor.withOpacity(0.5)
-                                : othersColor
-                      ),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 8),
+                          backgroundColor: isAnswered
+                              ? useranswer
+                                  ? answerColor
+                                  : othersColor
+                              : othersColor,
+                          disabledBackgroundColor: useranswer
+                              ? answerColor.withOpacity(0.5)
+                              : othersColor),
                       onPressed: isAnswered
                           ? null
                           : () {
@@ -257,19 +255,18 @@ class _TrueFalseQuizState extends State<TrueFalseQuiz> {
                   width: double.infinity,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 8),
-                        backgroundColor: isAnswered
-                            ? useranswer
-                                ? othersColor
-                                : answerColor
-                            : othersColor,
-                            disabledBackgroundColor: useranswer
-                                ? othersColor.withOpacity(0.5)
-                                : answerColor
-                      ),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 8),
+                          backgroundColor: isAnswered
+                              ? useranswer
+                                  ? othersColor
+                                  : answerColor
+                              : othersColor,
+                          disabledBackgroundColor: useranswer
+                              ? othersColor.withOpacity(0.5)
+                              : answerColor),
                       onPressed: isAnswered
                           ? null
                           : () {
