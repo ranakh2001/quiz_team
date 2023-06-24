@@ -5,7 +5,7 @@ import 'package:multi_quiz_s_t_tt9/pages/home.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../constants.dart';
-import '../modules/multipe_choice/quizBrainMultiple.dart';
+import '../modules/multipe_choice/quiz_brain_multiple.dart';
 
 class MultiQScreen extends StatefulWidget {
   const MultiQScreen({Key? key}) : super(key: key);
@@ -22,7 +22,6 @@ class _MultiQScreenState extends State<MultiQScreen> {
   bool isFinal = false;
   late Timer timer;
 
-  String nextText = 'Next';
   int counter = 10;
 
   void check() {
@@ -106,8 +105,6 @@ class _MultiQScreenState extends State<MultiQScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // int questionLength = quizBrainMulti.getQueionLength();
-    // int questionIndex = quizBrainMulti.getQueionIndex();
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -213,123 +210,6 @@ class _MultiQScreenState extends State<MultiQScreen> {
               const SizedBox(
                 height: 48,
               ),
-              // Padding(
-              //   padding: const EdgeInsets.only(bottom: 12),
-              //   child: ElevatedButton(
-              //     onPressed: isChoose
-              //         ? () {}
-              //         : () {
-              //             if (quizBrainMulti.getQuestionAnswer() ==
-              //                 quizBrainMulti.getFirstChoice()) {
-              //             timer.cancel();
-              //               score++;
-              //               firstAnsweColor =
-              //                   const Color.fromARGB(255, 226, 164, 6);
-              //             } else {
-              //               firstAnsweColor = Colors.red;
-              //             }
-              //             setState(() {
-              //               isChoose = true;
-              //             });
-              //           },
-              //     style: ElevatedButton.styleFrom(
-              //       backgroundColor: MaterialStateColor.resolveWith(
-              //           (states) => firstAnsweColor),
-              //       shape: RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.circular(15),
-              //       ),
-              //       padding: const EdgeInsets.symmetric(
-              //           vertical: 12, horizontal: 12),
-              //     ),
-              //     child: Expanded(
-              //       child: Center(
-              //         child: Text(
-              //           quizBrainMulti.getFirstChoice(),
-              //           style: const TextStyle(
-              //               color: kL2,
-              //               fontSize: 16,
-              //               fontWeight: FontWeight.w500),
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
-              // Padding(
-              //   padding: const EdgeInsets.only(bottom: 12),
-              //   child: ElevatedButton(
-              //     onPressed: isChoose
-              //         ? () {}
-              //         : () {
-              //             if (quizBrainMulti.getQuestionAnswer() ==
-              //                 quizBrainMulti.getSecondChoice()) {
-              //               score++;
-              //               firstAnsweColor =
-              //                   const Color.fromARGB(255, 226, 164, 6);
-              //             } else {
-              //               firstAnsweColor = Colors.red;
-              //             }
-              //             setState(() {
-              //               isChoose = true;
-              //             });
-              //           },
-              //     style: ElevatedButton.styleFrom(
-              //         backgroundColor: MaterialStateColor.resolveWith(
-              //             (states) => secondAnsweColor),
-              //         shape: RoundedRectangleBorder(
-              //           borderRadius: BorderRadius.circular(15),
-              //         ),
-              //         padding: const EdgeInsets.symmetric(
-              //             vertical: 12, horizontal: 12)),
-              //     child: Expanded(
-              //         child: Center(
-              //       child: Text(
-              //         quizBrainMulti.getSecondChoice(),
-              //         style: const TextStyle(
-              //             color: kL2,
-              //             fontSize: 16,
-              //             fontWeight: FontWeight.w500),
-              //       ),
-              //     )),
-              //   ),
-              // ),
-              // Padding(
-              //   padding: const EdgeInsets.only(bottom: 12),
-              //   child: ElevatedButton(
-              //     onPressed: isChoose
-              //         ? () {}
-              //         : () {
-              //             if (quizBrainMulti.getQuestionAnswer() ==
-              //                 quizBrainMulti.getThirdChoice()) {
-              //               score++;
-              //               firstAnsweColor =
-              //                   const Color.fromARGB(255, 226, 164, 6);
-              //             } else {
-              //               firstAnsweColor = Colors.red;
-              //             }
-              //             setState(() {
-              //               isChoose = true;
-              //             });
-              //           },
-              //     style: ElevatedButton.styleFrom(
-              //         backgroundColor: MaterialStateColor.resolveWith(
-              //             (states) => thirdAnsweColor),
-              //         shape: RoundedRectangleBorder(
-              //           borderRadius: BorderRadius.circular(15),
-              //         ),
-              //         padding: const EdgeInsets.symmetric(
-              //             vertical: 12, horizontal: 12)),
-              //     child: Expanded(
-              //         child: Center(
-              //       child: Text(
-              //         quizBrainMulti.getThirdChoice(),
-              //         style: const TextStyle(
-              //             color: kL2,
-              //             fontSize: 16,
-              //             fontWeight: FontWeight.w500),
-              //       ),
-              //     )),
-              //   ),
-              // ),
               Expanded(
                 child: ListView.builder(
                   itemCount: quizBrainMulti.getOptions().length,

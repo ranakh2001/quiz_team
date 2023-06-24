@@ -1,4 +1,4 @@
-import 'package:multi_quiz_s_t_tt9/modules/multipe_choice/questionMultiple.dart';
+import 'package:multi_quiz_s_t_tt9/modules/multipe_choice/question_multiple.dart';
 
 class QuizBrainMulti {
   int _questionNumber = 0;
