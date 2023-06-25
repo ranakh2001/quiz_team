@@ -1,7 +1,7 @@
 import 'package:multi_quiz_s_t_tt9/modules/multipe_choice/multiple_question.dart';
 import 'package:multi_quiz_s_t_tt9/modules/quiz_Brain.dart';
 
-class Brain_Multiple_Question extends QuizBrain {
+class Multiple_Question_Brain extends QuizBrain {
   final List<Multiple_Question> _question_Bank = [
     Multiple_Question(
       question_Text: 'What is the capital of Japan?',
