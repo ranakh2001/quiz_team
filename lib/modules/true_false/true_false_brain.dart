@@ -1,5 +1,5 @@
 import 'package:multi_quiz_s_t_tt9/modules/quiz_brain.dart';
-import 'package:multi_quiz_s_t_tt9/modules/true_false_question.dart';
+import 'package:multi_quiz_s_t_tt9/modules/true_false/true_false_question.dart';
 
 class True_False_Brain extends QuizBrain {
   final List<True_False_Question> _question_Bank = [
