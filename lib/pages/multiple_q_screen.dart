@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:multi_quiz_s_t_tt9/modules/multipe_choice/multiple_question_brain.dart';
 import 'package:multi_quiz_s_t_tt9/pages/home.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../constants.dart';
-import '../modules/multipe_choice/quiz_brain_multiple.dart';
 
 class MultiQScreen extends StatefulWidget {
   const MultiQScreen({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class MultiQScreen extends StatefulWidget {
 }
 
 class _MultiQScreenState extends State<MultiQScreen> {
-  QuizBrainMulti quizBrainMulti = QuizBrainMulti();
+  Multiple_Question_Brain quizBrainMulti = Multiple_Question_Brain();
   List<Icon> scoreKeeper = [];
   bool? isCorrect;
   int? userChoice;
@@ -23,9 +23,15 @@ class _MultiQScreenState extends State<MultiQScreen> {
   late Timer timer;
 
   int counter = 10;
+  @override
+  void initState() {
+    startTimer();
+    super.initState();
+    quizBrainMulti.setQuestionList();
+  }
 
   void check() {
-    int correctAnswer = quizBrainMulti.getQuestionAnswer();
+    int correctAnswer = quizBrainMulti.getQuestionAnswer_multiple();
     cancelTimer();
     setState(() {
       if (correctAnswer == userChoice) {
@@ -89,12 +95,6 @@ class _MultiQScreenState extends State<MultiQScreen> {
 
   void cancelTimer() {
     timer.cancel();
-  }
-
-  @override
-  void initState() {
-    startTimer();
-    super.initState();
   }
 
   @override
