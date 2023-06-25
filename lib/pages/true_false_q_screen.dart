@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:multi_quiz_s_t_tt9/modules/true_false/true_false_brain.dart';
 
 import '../constants.dart';
-import '../modules/true_false/quizBrain.dart';
 import '../widgets/my_outline_btn.dart';
 import 'home.dart';
 
@@ -15,7 +15,7 @@ class TrueFalseQuiz extends StatefulWidget {
 }
 
 class _TrueFalseQuizState extends State<TrueFalseQuiz> {
-  QuizBrain quizBrain = QuizBrain();
+  True_False_Brain quizBrain = True_False_Brain();
   bool isAnswered = false;
   Color answerColor = Colors.white;
   Color othersColor = Colors.white;
@@ -31,6 +31,7 @@ class _TrueFalseQuizState extends State<TrueFalseQuiz> {
   void initState() {
     super.initState();
     useranswer = false;
+    quizBrain.setQuestionList();
     questionnum = quizBrain.getQuestionNum();
     questionslength = quizBrain.getquestionsLength();
     startTimer();
@@ -108,7 +109,7 @@ class _TrueFalseQuizState extends State<TrueFalseQuiz> {
     setState(() {
       isAnswered = true;
       useranswer = userAnswer;
-      if (userAnswer == quizBrain.getQuestionAnswer()) {
+      if (userAnswer == quizBrain.getQuestionAnswer_true_or_false()) {
         answerColor = Colors.green;
         score++;
       } else {
