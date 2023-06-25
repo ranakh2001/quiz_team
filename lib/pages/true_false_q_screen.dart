@@ -269,7 +269,7 @@ class _TrueFalseQuizState extends State<TrueFalseQuiz> {
                               : othersColor,
                           disabledBackgroundColor: useranswer
                               ? othersColor.withOpacity(0.5)
-                              : answerColor),
+                              : answerColor.withOpacity(0.5)),
                       onPressed: isAnswered
                           ? null
                           : () {
