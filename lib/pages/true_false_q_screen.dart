@@ -58,41 +58,44 @@ class _TrueFalseQuizState extends State<TrueFalseQuiz> {
   }
 
   endQuiz() {
-    timer.cancel();
     print("finished");
-    // Timer(const Duration(microseconds: 250), () {
-    showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-              title: const Text("Finished You Are done"),
-              content: Text(
-                "Your score is : $score",
-                style: const TextStyle(
-                    fontSize: 16,
-                    color: kL1,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Sf-Pro-Text"),
-              ),
-              actions: [
-                TextButton(
-                    onPressed: () {
-                      setState(() {
-                        score = 0;
-                        quizBrain.reset();
-                      });
-                      Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const HomePage()),
-                          (context) => false);
-                    },
-                    child: const Text(
-                      "Finish",
-                      style: TextStyle(color: kL1, fontFamily: "Sf-Pro-Text"),
-                    ))
-              ],
-            ));
-    // });
+    Timer(const Duration(microseconds: 250), () {
+      setState(() {
+        timer.cancel();
+        showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+                  title: const Text("Finished You Are done"),
+                  content: Text(
+                    "Your score is : $score",
+                    style: const TextStyle(
+                        fontSize: 16,
+                        color: kL1,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Sf-Pro-Text"),
+                  ),
+                  actions: [
+                    TextButton(
+                        onPressed: () {
+                          setState(() {
+                            score = 0;
+                            quizBrain.reset();
+                          });
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomePage()),
+                              (context) => false);
+                        },
+                        child: const Text(
+                          "Finish",
+                          style:
+                              TextStyle(color: kL1, fontFamily: "Sf-Pro-Text"),
+                        ))
+                  ],
+                ));
+      });
+    });
   }
 
   @override
