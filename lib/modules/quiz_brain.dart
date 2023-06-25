@@ -8,7 +8,6 @@ abstract class QuizBrain {
     return questionBank[_question_number].question_Text;
   }
 
-  @override
   setQuestionList();
   bool getQuestionAnswer_true_or_false();
 
