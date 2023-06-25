@@ -294,7 +294,7 @@ class _TrueFalseQuizState extends State<TrueFalseQuiz> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     TextButton(
-                        onPressed: finished
+                        onPressed: quizBrain.isFinished()
                             ? endQuiz
                             : () {
                                 setState(() {
