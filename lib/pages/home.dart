@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multi_quiz_s_t_tt9/constants.dart';
+import 'package:multi_quiz_s_t_tt9/modules/levels_data.dart';
 import 'package:multi_quiz_s_t_tt9/pages/level_describtion.dart';
 
 import '../modules/level.dart';
@@ -15,24 +16,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Level> levels = [
-    Level(
-        title: 'True or False',
-        subtitle: 'Level 1',
-        description: 'Rise up to your IQ',
-        image: 'assets/images/bags.png',
-        icon: Icons.check,
-        colors: [kL1, kL12],
-        rootName: 'level1'),
-    Level(
-        title: 'Multiple choice',
-        subtitle: 'Level 2',
-        description: 'Rise up to your IQ',
-        image: 'assets/images/ballon-s.png',
-        icon: Icons.play_arrow,
-        colors: [kL2, kL22],
-        rootName: 'level2'),
-  ];
+  Levels_Data levels_data = Levels_Data();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,22 +70,25 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: levels.length,
+                itemCount: levels_data.levels.length,
                 itemBuilder: (context, index) {
                   return MyLevelWidget(
                     function: () {
-                      Navigator.push(
+                      // levels_data.levels[0].status
+                      // ?
+                      (Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
                             return LevelDescription(
-                              level: levels[index],
+                              level: levels_data.levels[index],
                             );
                           },
                         ),
-                      );
+                      ));
+                      // : null;
                     },
-                    level: levels[index],
+                    level: levels_data.levels[index],
                   );
                 },
               ),

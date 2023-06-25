@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:multi_quiz_s_t_tt9/modules/level.dart';
 import 'package:multi_quiz_s_t_tt9/modules/multipe_choice/multiple_question_brain.dart';
 import 'package:multi_quiz_s_t_tt9/pages/home.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -17,6 +18,7 @@ class MultiQScreen extends StatefulWidget {
 class _MultiQScreenState extends State<MultiQScreen> {
   Multiple_Question_Brain quizBrainMulti = Multiple_Question_Brain();
   List<Icon> scoreKeeper = [];
+  int trues = 0;
   bool? isCorrect;
   int? userChoice;
   bool isFinal = false;
@@ -42,6 +44,7 @@ class _MultiQScreenState extends State<MultiQScreen> {
             color: Colors.green,
           ),
         );
+        ++trues;
       } else {
         isCorrect = false;
         scoreKeeper.add(

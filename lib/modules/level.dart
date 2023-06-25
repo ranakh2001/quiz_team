@@ -8,6 +8,7 @@ class Level {
   final IconData? icon;
   final List<Color> colors;
   final String rootName;
+  bool status = false;
 
   Level(
       {required this.title,
@@ -16,5 +17,6 @@ class Level {
       required this.colors,
       required this.rootName,
       this.image,
-      this.icon});
+      this.icon,
+      required this.status});
 }
