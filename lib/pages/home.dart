@@ -6,7 +6,6 @@ import '../modules/level.dart';
 import '../widgets/my_level_widget.dart';
 import '../widgets/my_outline_btn.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({
     super.key,
@@ -45,17 +44,13 @@ class _HomePageState extends State<HomePage> {
             icon: Icons.favorite,
             iconColor: kBlueIcon,
             bColor: kGreyFont.withOpacity(0.5),
-            function: () {
-              print("11111");
-            },
+            function: () {},
           ),
           MYOutlineBtn(
               icon: Icons.person,
               iconColor: kBlueIcon,
               bColor: kGreyFont.withOpacity(0.5),
-              function: () {
-                print("2222");
-              }),
+              function: () {}),
           SizedBox(
             width: 16,
           )
